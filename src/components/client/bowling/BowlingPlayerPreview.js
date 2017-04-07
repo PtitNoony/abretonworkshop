@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import axios from 'axios';
-import { browserHistory, Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 export default class BowlingPlayerPreview extends React.Component {
@@ -31,7 +31,7 @@ export default class BowlingPlayerPreview extends React.Component {
 
     render() {
         return (
-                <div className="abw_bowlingPlayerPreview" onClick={() => browserHistory.push("/bowlingPlayer/" + this.props.player._id)}>
+                <div className="abw_bowlingPlayerPreview" onClick={() => this.props.history.push("/bowlingPlayer/" + this.props.player._id, {})}>
                 
                     <div className="abw_pagePreviewIconContainer" >
                         <div className="abw_pagePreviewIconDiv">
@@ -65,7 +65,7 @@ export default class BowlingPlayerPreview extends React.Component {
                         </div>                                           
                     </div>
                 </div>
-                );
+                    );
+        }
     }
-}
 

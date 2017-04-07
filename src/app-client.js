@@ -1,14 +1,19 @@
-'use strict';
+/* global window document */
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import AppRoutes from './components/AppRoutes';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { App } from './components/App';
 import axios from 'axios';
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
 
-var instance = axios.create({
-  baseURL: 'http://localhost:3000'
-});
+const AppClient = () => (
+  <Router history={ history }>
+    <App />
+  </Router>
+);
 
 window.onload = () => {
-  ReactDOM.render(<AppRoutes/>, document.getElementById('main'));
+  render(<AppClient />, document.getElementById('main'));
 };

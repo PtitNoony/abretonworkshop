@@ -2,7 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
-import { browserHistory, Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Accordion, MenuItem, Nav, Navbar, NavDropdown, NavItem, Panel, Tab, Tabs} from 'react-bootstrap';
 import YouTube from 'react-youtube';
 
@@ -184,10 +184,10 @@ export default class ResearchPage extends React.Component {
                             </Navbar.Header>
                             <Navbar.Collapse>
                                 <Nav>
-                                    <NavItem eventKey={1} onClick={() => browserHistory.push("/bowling")}>Bowling</NavItem>
-                                    <NavItem eventKey={2} onClick={() => browserHistory.push("/foe")}>FoE</NavItem>
+                                    <NavItem eventKey={1} onClick={() => this.props.history.push("/bowling")}>Bowling</NavItem>
+                                    <NavItem eventKey={2} onClick={() => this.props.history.push("/foe")}>FoE</NavItem>
                                     <NavItem eventKey={3} >Research</NavItem>
-                                    <NavItem eventKey={4} onClick={() => browserHistory.push("/perso")}>Perso</NavItem>
+                                    <NavItem eventKey={4} onClick={() => this.props.history.push("/perso")}>Perso</NavItem>
                                 </Nav>
                             </Navbar.Collapse>
                         </Navbar>

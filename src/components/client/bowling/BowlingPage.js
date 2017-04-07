@@ -2,7 +2,6 @@
 
 import React from 'react';
 import axios from 'axios';
-import { browserHistory } from 'react-router';
 import { MenuItem, Nav, Navbar, NavDropdown, NavItem, Tab, Tabs} from 'react-bootstrap';
 
 import BowlingPlayerPreview from './BowlingPlayerPreview';
@@ -38,7 +37,7 @@ export default class BowlingPage extends React.Component {
                 <div className="">
                     <h1>Players Overview</h1>
                     <ul>
-                        {this.state.players.map(player => <BowlingPlayerPreview key={player._id} player={player} />)}
+                        {this.state.players.map(player => <BowlingPlayerPreview key={player._id} player={player} history={this.props.history}/>)}
                     </ul>
                 </div>
                 );
@@ -58,9 +57,9 @@ export default class BowlingPage extends React.Component {
                             <Navbar.Collapse>
                                 <Nav>
                                     <NavItem eventKey={1} id="basic-nav-dropdown">Bowling</NavItem>
-                                    <NavItem eventKey={2} onClick={() => browserHistory.push("/foe")}>FoE</NavItem>
-                                    <NavItem eventKey={3} onClick={() => browserHistory.push("/research")}>Research</NavItem>
-                                    <NavItem eventKey={4} onClick={() => browserHistory.push("/perso")}>Perso</NavItem>
+                                    <NavItem eventKey={2} onClick={() => this.props.history.push("/foe")}>FoE</NavItem>
+                                    <NavItem eventKey={3} onClick={() => this.props.history.push("/research")}>Research</NavItem>
+                                    <NavItem eventKey={4} onClick={() => this.props.history.push("/perso")}>Perso</NavItem>
                                 </Nav>
                             </Navbar.Collapse>
                         </Navbar>

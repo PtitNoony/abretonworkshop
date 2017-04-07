@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import axios from 'axios';
-import { browserHistory, Link } from 'react-router';
+import { browserHistory, Link } from 'react-router-dom';
 import { MenuItem, Nav, Navbar, NavDropdown, NavItem, Pagination, Panel, Tab, Tabs, Table} from 'react-bootstrap';
 
 var LineChart = require("react-chartjs").Line;
@@ -37,7 +37,7 @@ export default class BowlingPlayerPage extends React.Component {
     }
 
     getData() {
-        axios.get('http://localhost:3000/api/bowling/playerData/' + this.props.params.id)
+        axios.get('http://localhost:3000/api/bowling/playerData/' + this.props.id)
                 .then(res => {
                     var data = res.data;
                     var playerScores = createGraphData(data.scores);

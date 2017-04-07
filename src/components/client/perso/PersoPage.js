@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { browserHistory, Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { MenuItem, Nav, Navbar, NavDropdown, NavItem, Tab, Tabs} from 'react-bootstrap';
 
 
@@ -19,9 +19,9 @@ export default class PersoPage extends React.Component {
                             </Navbar.Header>
                             <Navbar.Collapse>
                                 <Nav>
-                                    <NavItem eventKey={1} onClick={() => browserHistory.push("/bowling")}>Bowling</NavItem>
-                                    <NavItem eventKey={2} onClick={() => browserHistory.push("/foe")}>FoE</NavItem>
-                                    <NavItem eventKey={3} onClick={() => browserHistory.push("/research")}>Research</NavItem>
+                                    <NavItem eventKey={1} onClick={() => this.props.history.push("/bowling")}>Bowling</NavItem>
+                                    <NavItem eventKey={2} onClick={() => this.props.history.push("/foe")}>FoE</NavItem>
+                                    <NavItem eventKey={3} onClick={() => this.props.history.push("/research")}>Research</NavItem>
                                     <NavItem eventKey={4} >Perso</NavItem>
                                 </Nav>
                             </Navbar.Collapse>
