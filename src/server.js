@@ -61,6 +61,24 @@ app.get('/api/bowling/playerData/:playerID', (req, res) => {
 });
 
 //
+app.get('/api/foe/era', (req, res) => {
+    data.foeEra(result => {
+        res.json(result);
+    });
+});
+//
+app.get('/api/foe/buildingTypes', (req, res) => {
+    data.foeBuildingTypes(result => {
+        res.json(result);
+    });
+});
+//
+app.get('/api/foe/buildings', (req, res) => {
+    data.foeBuildings(result => {
+        res.json(result);
+    });
+});
+//
 
 app.get('/api/research/publications', (req, res) => {
     data.publications(result => {

@@ -1,5 +1,6 @@
 import bowlingGames from '../data/bowlingGames';
 import publications from '../data/publications';
+import foeBuildings from '../data/foebuildings';
 
 import { getPlayerGames, getPlayerScores, getPlayerStat  } from './calculations/bowling';
 
@@ -39,6 +40,19 @@ var self = module.exports = {
         callback(publications);
     },
     //
+    foeEra:(callback) => {
+        callback(foeBuildings.era);
+    },
+    //
+    foeBuildingTypes:(callback) => {
+        //foeBuildings
+        var buildingTypes = Object.keys(foeBuildings.buildings);
+        callback(buildingTypes);
+    },
+    //
+    foeBuildings:(callback) => {
+        callback(foeBuildings);
+    }
 
 };
 
