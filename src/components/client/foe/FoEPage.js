@@ -4,7 +4,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ButtonToolbar, DropdownButton, ListGroup, ListGroupItem, MenuItem, Nav, Navbar, NavDropdown, NavItem, Tab, Tabs, Table} from 'react-bootstrap';
 import axios from 'axios';
-import { StyleSheet, css } from 'aphrodite';
 import reactCSS from 'reactcss';
 
 const eraColors = [
